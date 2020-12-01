@@ -27,10 +27,17 @@ for food in foods:
 foods=('dumplings','fried rice','beef noodles','tofu')
 for food in foods:
     print(food[2:])
-    
+   
 foods=('dumplings','fried rice','beef noodles','tofu')
 for index,food in enumerate(foods):
     print(f"{food} is a good food and it is on the index=>{index}")
+
+foods=('dumplings','fried rice','beef noodles','tofu')
+for food in foods[2:]:
+    print(food)
+foods=('dumplings','fried rice','beef noodles','tofu')
+for food in foods[-2:]:
+    print(food)
 #### Exercise 4 ------------------------------------------------
 # - Create a dictionary named `home_town` containing the keys of `city`, `state` and `population`.
 home_town = [
