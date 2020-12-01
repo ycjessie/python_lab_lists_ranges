@@ -21,6 +21,9 @@ foods=('dumplings','fried rice','beef noodles','tofu')
 for food in foods:
     print(food+" is a good food ")
 
+foods=('dumplings','fried rice','beef noodles','tofu')
+for index,food in enumerate(foods):
+    print(f"{food} is a good food and it is on the index=>{index}")
 
 #### Exercise 3 ------------------------------------------------
 # - Using a `for` loop, print just the last two food strings from `foods`.
@@ -29,14 +32,10 @@ for food in foods:
     print(food[2:])
    
 foods=('dumplings','fried rice','beef noodles','tofu')
-for index,food in enumerate(foods):
-    print(f"{food} is a good food and it is on the index=>{index}")
-
-foods=('dumplings','fried rice','beef noodles','tofu')
-for food in foods[2:]:
+for food in foods[-2:]:
     print(food)
 foods=('dumplings','fried rice','beef noodles','tofu')
-for food in foods[-2:]:
+for food in foods[::2]:
     print(food)
 #### Exercise 4 ------------------------------------------------
 # - Create a dictionary named `home_town` containing the keys of `city`, `state` and `population`.
@@ -79,11 +78,32 @@ for home in home_town:
 
 #### Exercise 5 ------------------------------------------------
 # - Iterate over the _key: value_ pairs in `home_town` and print a string for each item, for example:<br>"city = Arcadia"<br>"state = California"<br>"population = 58000"
-
-
+home_town = [
+    {
+        "state": "Arkansas",
+        "city": "Little Rock",
+        "population": 11121
+       
+    }, 
+    {
+        "state": "California",
+        "city": "Sacramento",
+        "population": 100218
+        
+    }]
+for state,city in home_town.items():
+    print(f"{state}={city}")
 
 #### Exercise 6 ------------------------------------------------
 # - Create an empty list named `cohort`.
+
+# cohort=[{
+#     'student': 'Tina',
+#     'fav_food': 'Cheeseburger'
+# },
+# {   'student': 'Jessie',
+#     'fav_food': 'dumplings'
+# }]
 
 
 
@@ -93,9 +113,14 @@ for home in home_town:
 # 		'student': 'Tina',
 # 		'fav_food' 'Cheeseburger'
 # 	}
+students = ['Jessie', 'Tina', 'Sofia','Peter','Sam']
+foods=('dumplings','fried rice','beef noodles','tofu')
+cohort=[]
+for n,f in zip(students,foods):
+    cohort.append({"student":n,"fav_food":f})
 
-
-
+for c in cohort:
+    print(c)
 # - Iterate over `cohort` printing out each element.
 
 
@@ -103,7 +128,10 @@ for home in home_town:
 #### Exercise 7 ------------------------------------------------
 # - Using the list of `students` and list comprehension, assign to a variable named `awesome_students` a new list containing strings similar to this:<br>["Tina is awesome!", "Fred is awesome!", "Wilma is awesome!"]
 
-
+students=('Jessie','Tina','Sofia')
+awesome_student=students[:]
+for i in students:
+    print(str(i) + " is an awesome student %s" % str(i))
 
 # - Iterate over `awesome_students` printing out each string.
 
